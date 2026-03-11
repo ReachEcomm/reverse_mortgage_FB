@@ -30,7 +30,7 @@ export function initLighthouseFormLogic(): void {
     // NOTE: This sets a default endpoint; you can still override window.API_URL
     // in your page.tsx before calling initLighthouseFormLogic if you want.
     const API_URL = (window.API_URL =
-      "https://reverse-mortgage.marko-c6c.workers.dev/submit");
+      "https://reverse-mortgage-fb.marko-c6c.workers.dev/submit");
 
     const DUPLICATE_TTL_MS = 10 * 60 * 1000; // 10 mins
     const TIMEOUT_MS = 15000; // 15 secs
