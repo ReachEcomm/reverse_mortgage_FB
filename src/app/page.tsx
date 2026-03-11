@@ -323,7 +323,7 @@ useEffect(() => {
 
                      <button type="button"
                         className="card-radio equal-card"
-                        data-value="Pay Off Existing Mortgage"
+                        data-value="Pay Off My Existing Mortgage"
                       >
                         <svg
                           width="32"
@@ -338,7 +338,7 @@ useEffect(() => {
                         </svg>
 
                         <div>
-                          <div className="font-semibold text-navy">Pay Off Existing Mortgage</div>
+                          <div className="font-semibold text-navy">Pay Off My Existing Mortgage</div>
                           <div className="text-xs text-slate-500"></div>
                         </div>
                       </button>
@@ -370,7 +370,7 @@ useEffect(() => {
                             <button
                               type="button"
                               className="card-radio equal-card"
-                              data-value="Other"
+                              data-value="Explore My Options"
                             >
                               <svg
                                 width="32"
@@ -385,7 +385,7 @@ useEffect(() => {
                               </svg>
 
                               <div>
-                                <div className="font-semibold text-navy">Other</div>
+                                <div className="font-semibold text-navy">Explore My Options</div>
                                 <div className="text-xs text-slate-500"></div>
                               </div>
                             </button>
