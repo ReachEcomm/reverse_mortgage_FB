@@ -253,21 +253,27 @@ header {
 }
 
 .card-radio {
-  border: 1px solid #E5E7EB;
-  border-radius: 1rem;
-  padding: 1rem 1.25rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0.75rem;
-  transition: all 0.25s ease;
-  cursor: pointer;
-  background: #fff;
-  min-height: 65px;
-  box-sizing: border-box;
-  width: 100%;
+    cursor: pointer;
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .75rem;
+
+    width: 100%;
+    min-height: 65px;
+    padding: 1rem 1.25rem;
+
+    transition: all .25s ease;
+    border-color: #d1d5db;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
 }
+
 .card-radio div {
   flex: 1;
   display: flex;
@@ -278,20 +284,29 @@ header {
   flex-shrink: 0;
   width: 28px;
   height: 28px;
-  color: #CBD5E1;
+  color: #1155B2;
 }
+
+
+/* HOVER STATE */
 .card-radio:hover {
-  border-color: #3D74E5;
-  background: rgba(61, 116, 229, 0.05);
+    border-color: #d1d5db;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
 }
+
+
 .card-radio[aria-checked="true"] {
-  border-color: #3D74E5;
-  background: rgba(61, 116, 229, 0.05);
-  box-shadow: 0 0 0 3px rgba(61, 116, 229, 0.25);
+
+  background: linear-gradient(180deg,#4c77d8,#2e4f97);
+    border-color: transparent;
+    color: #ffffff;
 }
+
 .card-radio[aria-checked="true"] svg {
-  color: #3D74E5;
+  color: #ffffff;
 }
+
 .card-radio div .font-semibold {
   font-size: 1rem;
   font-weight: 600;
@@ -305,6 +320,7 @@ header {
     align-items: stretch;
   }
 }
+
 
 /* =========================================================
    FORM FIELDS
@@ -362,14 +378,16 @@ form input:focus {
   justify-content: center;
   gap: 0.5rem;
   padding: 0.85rem 1.75rem;
-  border-radius: 9999px;
+  border-radius: 10px;
   font-weight: 600;
   font-size: 1rem;
-  color: #fff;
-  background: linear-gradient(90deg, #3D74E5 0%, #22407F 100%);
+  color: black;
+  background: linear-gradient(99deg, #F8C50E 5.16%, #F8A401 89.78%);
   box-shadow: 0 3px 8px rgba(61, 116, 229, 0.25);
   transition: all 0.25s ease;
 }
+
+
 .brand-btn-primary:hover {
   opacity: 0.95;
   transform: translateY(-1px);
@@ -390,14 +408,15 @@ form input:focus {
   justify-content: center;
   gap: 0.5rem;
   padding: 0.85rem 1.75rem;
-  border-radius: 9999px;
+  border-radius: 10px;
   font-weight: 500;
   font-size: 1rem;
-  border: 2px solid #3D74E5;
+  border: 2px solid #F8A401;
   background-color: #fff;
   color: #22407F;
   transition: all 0.25s ease;
 }
+
 .brand-btn-secondary:hover {
   background: rgba(61, 116, 229, 0.05);
   color: #1F2740;
