@@ -486,6 +486,7 @@ export function initLighthouseFormLogic(): void {
       }
     }
 
+    /**
     async function trySubmit(payload: any) {
       console.log("submitAttempt", payload);
       setSubmitting(true);
@@ -517,7 +518,58 @@ export function initLighthouseFormLogic(): void {
         submitError?.classList.remove("hidden");
         return false;
       }
-    }
+    } */
+
+      /** Facebook Pixel */
+
+    async function trySubmit(payload: any) {
+  console.log("submitAttempt", payload);
+  setSubmitting(true);
+  submitError?.classList.add("hidden");
+  const target = API_URL || ZAPIER_FALLBACK;
+
+  try {
+    if (!target) throw new Error("No submission endpoint configured");
+
+    const r = (await postWithTimeout(target, payload)) as {
+      ok?: boolean;
+      status?: number;
+      eventId?: string;
+    };
+
+    console.log("submitSuccess", r);
+    setSubmitting(false);
+
+    step1?.classList.add("hidden");
+    step2?.classList.add("hidden");
+    duplicateMsg?.classList.add("hidden");
+    thankYou?.classList.remove("hidden");
+
+    window.setTimeout(() => {
+      const params = new URLSearchParams();
+
+      if (payload.email) params.set("email", payload.email);
+      if (payload.phone) params.set("phone", payload.phone);
+      if (payload.first_name) params.set("fname", payload.first_name);
+      if (payload.last_name) params.set("lname", payload.last_name);
+      if (r?.eventId) params.set("eid", r.eventId);
+
+      const THANK_YOU_URL = `https://www.lighthouselending.ca/thank-you-page?${params.toString()}`;
+
+      window.open(THANK_YOU_URL, "_top");
+    }, THANKYOU_DELAY_MS);
+
+    return true;
+  } catch (e) {
+    console.log("submitFailure", String(e));
+    enqueueFailed(payload, e);
+    setSubmitting(false);
+    submitError?.classList.remove("hidden");
+    return false;
+  }
+}
+
+/** Facebook pixel ends here */
 
     retryBtn?.addEventListener("click", async () => {
       const last = readQueue()[0];
