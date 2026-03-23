@@ -806,7 +806,7 @@ export function initLighthouseFormLogic(): void {
 
       let ok = true;
 
-      const homeowner = form.querySelector('input[name="homeowner"]:checked') as HTMLInputElement | null;
+      {/**const homeowner = form.querySelector('input[name="homeowner"]:checked') as HTMLInputElement | null;
       if (!homeowner) {
         invalidate(
           "homeowner",
@@ -814,7 +814,7 @@ export function initLighthouseFormLogic(): void {
           form.querySelector('input[name="homeowner"]') as HTMLElement
         );
         ok = false;
-      }
+      } */}
 
       if (!needValue?.value) {
         invalidate("need", "Please select one option.", needGroup);
@@ -988,8 +988,8 @@ export function initLighthouseFormLogic(): void {
     const buildPayload = () => {
       if (!form || !needValue || !phoneInput || !amountInput) return {};
 
-      const homeowner =
-        (form.querySelector('input[name="homeowner"]:checked') as HTMLInputElement | null)?.value || "";
+      {/**const homeowner =
+        (form.querySelector('input[name="homeowner"]:checked') as HTMLInputElement | null)?.value || "";*/}
 
       const amountNum = parseNumber(amountInput.value); // numeric
       if (amountRaw) amountRaw.value = String(amountNum); // keep hidden synced
@@ -1003,7 +1003,7 @@ export function initLighthouseFormLogic(): void {
 
       return {
         company: "Lighthouse Lending",
-        homeowner,
+        //homeowner,
         mortgage_need: needValue.value,
         amount: amountNum, // ✅ numeric from input
         first_name: firstName,
