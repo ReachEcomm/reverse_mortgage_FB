@@ -6,7 +6,7 @@ import { initLighthouseFormLogic } from "@/lib/lighthouseFormLogic";
 export default function LighthouseFormPage() {
   useEffect(() => {
   // Cloudflare Worker endpoint (executed on client side only)
-  window.API_URL = "https://reverse-mortgage-fb.marko-c6c.workers.dev";
+  window.API_URL = "https://reverse-mortgage-fb.marko-c6c.workers.dev/submit";
 
   // Initialize Lighthouse logic
   initLighthouseFormLogic();
