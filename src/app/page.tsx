@@ -401,7 +401,7 @@ useEffect(() => {
 
                  
 {/* Q3 – Amount range buttons */}
-<div className="space-y-2 relative z-20">
+{/**<div className="space-y-2 relative z-20">
   <label
     className="text-base font-semibold"
     style={{ color: "var(--brand-navy)" }}
@@ -413,7 +413,7 @@ useEffect(() => {
     An estimate is fine — just choose the closest range.
   </p>
 
-  {/* 4 buttons in a 2x2 grid */}
+ 
   <div
     id="amountRangeGroup"
     className="grid grid-cols-2 gap-3"
@@ -453,7 +453,7 @@ useEffect(() => {
     </button>
   </div>
 
-  {/* Hidden field that actually stores the numeric value */}
+
   <input type="hidden" id="amountRangeValue" name="amount" />
 
   <p
@@ -461,7 +461,45 @@ useEffect(() => {
     id="err-amount"
   ></p>
 </div>
+*/}
 
+{/* Q3 – Amount input (live comma formatting) */}
+<div className="space-y-2 relative z-20">
+  <label
+    htmlFor="amount"
+    className="text-base font-semibold"
+    style={{ color: "var(--brand-navy)" }}
+  >
+    What’s the amount you have in mind? <span className="text-red-600">*</span>
+  </label>
+
+  <p id="amountHelp" className="text-sm text-slate-500">
+    An estimate is fine — we’ll work out the details together.
+  </p>
+
+  <div className="relative">
+    <span className="absolute left-4 inset-y-0 flex items-center text-slate-400 pointer-events-none">
+      $
+    </span>
+
+    <input
+      id="amount"
+      name="amount_display"
+      inputMode="numeric"
+      autoComplete="off"
+      className="w-full rounded-2xl border px-10 py-3 focus:outline-none focus:ring-4 ring-blue-100"
+      placeholder="e.g., 250,000"
+      aria-describedby="amountHelp err-amount"
+    />
+  </div>
+
+  {/* This is the real numeric value your logic should submit */}
+  <input type="hidden" id="amountRaw" name="amount" />
+
+  <p className="mt-1 text-sm text-red-600 hidden" id="err-amount"></p>
+</div>
+
+                  
 
                   
 
