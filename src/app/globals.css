@@ -16,6 +16,12 @@
   --blue-2: #3D74E5;
 }
 
+.step .circle {
+   display: none !important;}
+
+   .step .label {
+     display: none !important;}
+
 /* ---------------------------------------------------------
    BASE STYLES
 --------------------------------------------------------- */
