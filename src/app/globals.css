@@ -16,11 +16,6 @@
   --blue-2: #3D74E5;
 }
 
-.step .circle {
-   display: none !important;}
-
-   .step .label {
-     display: none !important;}
 
 /* ---------------------------------------------------------
    BASE STYLES
@@ -131,6 +126,7 @@ header {
   color: var(--brand-navy);
   transform: translateY(-50%);
   transition: all .25s ease;
+  display: none;
 }
 
 .step.active .circle {
@@ -146,6 +142,7 @@ header {
   color: #6B7280;
   font-weight: 600;
   text-align: center;
+  display: none;
 }
 
 
